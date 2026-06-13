@@ -1,0 +1,9 @@
+minecraft/
+!minecraft/config/fancymenu/assets/mistbound/bg.png
+!minecraft/config/fancymenu/assets/mistbound/bg_menu_720p.mp4
+!minecraft/config/fancymenu/assets/mistbound/logo_menu.png
+mrpack/
+mmc-pack.json
+*.cfg
+*.webp
+modrinth_fabulously-optimized

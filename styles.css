@@ -1,0 +1,313 @@
+:root {
+  --text: #fff4dc;
+  --muted: #d8c79f;
+  --gold: #e2ad52;
+  --gold-light: #ffe39a;
+  --panel: rgba(11, 10, 8, 0.78);
+  --line: rgba(255, 244, 220, 0.22);
+  --shadow: 0 28px 110px rgba(0, 0, 0, 0.58);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background: #080806;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background:
+    radial-gradient(circle at 50% 34%, rgba(164, 91, 255, 0.1), transparent 22rem),
+    linear-gradient(to bottom, rgba(5, 6, 5, 0.2), rgba(5, 6, 5, 0.9)),
+    linear-gradient(90deg, rgba(5, 6, 5, 0.78), rgba(5, 6, 5, 0.26), rgba(5, 6, 5, 0.78));
+}
+
+a {
+  color: inherit;
+}
+
+.bg-video {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home {
+  display: grid;
+  min-height: 100vh;
+  padding: clamp(24px, 5vw, 64px);
+  place-items: center;
+}
+
+.hero {
+  display: grid;
+  justify-items: center;
+  width: min(760px, 100%);
+  text-align: center;
+  animation: appear 700ms ease both;
+}
+
+.logo {
+  width: min(820px, 96vw);
+  margin-bottom: 10px;
+  animation: logo-enter 900ms cubic-bezier(0.2, 0.9, 0.2, 1) both, logo-float 4.8s 950ms ease-in-out infinite;
+  filter:
+    drop-shadow(0 28px 48px rgba(0, 0, 0, 0.72))
+    drop-shadow(0 0 16px rgba(164, 91, 255, 0.24))
+    drop-shadow(0 0 34px rgba(103, 57, 198, 0.14));
+  transform-origin: center;
+}
+
+.play-button {
+  display: grid;
+  width: min(430px, 88vw);
+  min-height: 84px;
+  margin-top: 20px;
+  padding: 0 44px;
+  place-items: center;
+  color: #fff3cf;
+  background: url("minecraft/config/fancymenu/assets/mistbound/b1_off.png") center / 100% 100% no-repeat;
+  border: 0;
+  filter: drop-shadow(0 22px 36px rgba(0, 0, 0, 0.42));
+  text-decoration: none;
+  transition: transform 160ms ease, filter 160ms ease;
+}
+
+.play-button:hover,
+.play-button:focus-visible {
+  background-image: url("minecraft/config/fancymenu/assets/mistbound/b1_on.png");
+  filter: brightness(1.08) drop-shadow(0 24px 38px rgba(0, 0, 0, 0.46));
+  transform: translateY(-2px) scale(1.015);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.modal:target {
+  display: grid;
+  place-items: center;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(226, 173, 82, 0.14), transparent 24rem),
+    rgba(0, 0, 0, 0.7);
+}
+
+.instruction {
+  position: relative;
+  width: min(900px, 100%);
+  padding: clamp(22px, 4vw, 38px);
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 40%),
+    var(--panel);
+  box-shadow: var(--shadow);
+  transform: translateZ(0);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.step-label {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.instruction-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-right: 42px;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Palatino Linotype", serif;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.step-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  min-height: 168px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.step-card span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: #201407;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  font-weight: 950;
+}
+
+.step-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.step-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.step-card a {
+  color: var(--gold-light);
+  font-weight: 900;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.small-button {
+  display: inline-grid;
+  min-height: 48px;
+  padding: 12px 18px;
+  place-items: center;
+  color: #1c1307;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.small-button.muted {
+  color: var(--text);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.92);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(3px) scale(1.035);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-8px) scale(1.012);
+  }
+}
+
+@media (max-width: 560px) {
+  .home {
+    padding: 18px;
+  }
+
+  .play-button {
+    min-height: 68px;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .instruction {
+    border-radius: 24px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .step-card {
+    min-height: 0;
+  }
+}

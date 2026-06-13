@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сгущестан - Туманный Оазис</title>
+    <meta
+      name="description"
+      content="Подключение к серверу Сгущестан: скачать лаунчер PineconeMC, добавить сборку и войти через Ely.by."
+    >
+    <link rel="icon" href="server-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <video class="bg-video" autoplay muted loop playsinline poster="minecraft/config/fancymenu/assets/mistbound/bg.png" aria-hidden="true">
+      <source src="minecraft/config/fancymenu/assets/mistbound/bg_menu_720p.mp4" type="video/mp4">
+    </video>
+
+    <main class="home">
+      <section class="hero" aria-label="Сгущестан">
+        <img class="logo" src="minecraft/config/fancymenu/assets/mistbound/logo_menu.png" alt="Сгущестан">
+        <a class="play-button" href="#instruction" aria-label="Играть на сервере"></a>
+      </section>
+    </main>
+
+    <section class="modal" id="instruction" aria-labelledby="instruction-title">
+      <a class="modal-backdrop" href="#" aria-label="Закрыть инструкцию"></a>
+      <article class="instruction">
+        <a class="close" href="#" aria-label="Закрыть">×</a>
+        <div class="instruction-head">
+          <p class="step-label">Старт</p>
+          <h1 id="instruction-title">Как начать играть</h1>
+        </div>
+
+        <div class="steps">
+          <article class="step-card">
+            <span>1</span>
+            <div>
+              <h2>Скачай лаунчер</h2>
+              <p>Установи PineconeMC Launcher с сайта сервера.</p>
+              <a href="https://pineconemc.ru/download/" target="_blank" rel="noreferrer">pineconemc.ru/download</a>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span>2</span>
+            <div>
+              <h2>Создай Ely.by</h2>
+              <p>Зарегистрируй аккаунт Ely.by и войди через него в лаунчере.</p>
+              <a href="https://ely.by/" target="_blank" rel="noreferrer">ely.by</a>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span>3</span>
+            <div>
+              <h2>Скачай сборку</h2>
+              <p>Скачай файл сборки с Google Drive и добавь его в лаунчер.</p>
+              <a href="https://drive.google.com/file/d/1ww8JzQ11zwyC5pDXyK4-4aJOXl4d9rB1/view?usp=sharing" target="_blank" rel="noreferrer">Скачать сборку</a>
+            </div>
+          </article>
+
+          <article class="step-card">
+            <span>4</span>
+            <div>
+              <h2>Запусти сервер</h2>
+              <p>Выбери аккаунт Ely.by, запусти сборку и подключись к серверу из списка.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="actions">
+          <a class="small-button" href="https://pineconemc.ru/download/" target="_blank" rel="noreferrer">Скачать лаунчер</a>
+          <a class="small-button" href="https://drive.google.com/file/d/1ww8JzQ11zwyC5pDXyK4-4aJOXl4d9rB1/view?usp=sharing" target="_blank" rel="noreferrer">Скачать сборку</a>
+          <a class="small-button muted" href="https://ely.by/" target="_blank" rel="noreferrer">Создать Ely.by</a>
+        </div>
+      </article>
+    </section>
+  </body>
+</html>
